@@ -1,0 +1,145 @@
+<pre style='text-align: start;color: rgb(0, 0, 0);font-size: 10pt;font-family: "'>      const searchTerm = document.getElementById(&apos;searchInput&apos;).value.toLowerCase();
+      currentFilteredVideos = videos.filter(video =&gt; 
+        video.title.toLowerCase().includes(searchTerm) || 
+        video.description.toLowerCase().includes(searchTerm)
+      );
+      currentPage = 1;
+      displayProjects(currentPage);
+    }
+
+
+    function displayProjects(page) {
+      const projectList = document.getElementById(&apos;project-list&apos;);
+      if (!projectList) {
+        console.error(&apos;Project list element not found!&apos;);
+        return;
+      }
+
+
+      const start = (page - 1) * videosPerPage;
+      const end = start + videosPerPage;
+      const paginatedVideos = currentFilteredVideos.slice(start, end);
+      const searchTerm = document.getElementById(&apos;searchInput&apos;).value.toLowerCase();
+
+
+      projectList.innerHTML = &apos;&apos;;
+      
+      if (paginatedVideos.length === 0) {
+        projectList.innerHTML = &apos;&lt;p class=&quot;no-projects&quot; style=&quot;text-align: center;color: #546e7a;&quot;&gt;No projects found matching your search. Try different keywords.&lt;/p&gt;&apos;;
+        document.getElementById(&apos;pagination&apos;).innerHTML = &apos;&apos;;
+        return;
+      }
+      
+      paginatedVideos.forEach(video =&gt; {
+        const [brief, full] = video.description.split(&apos;||&apos;);
+        const projectDiv = document.createElement(&apos;div&apos;);
+        projectDiv.className = &apos;project&apos;;
+        const isHighlighted = searchTerm &amp;&amp; video.title.toLowerCase().includes(searchTerm);
+        projectDiv.innerHTML = `
+          &lt;img src=&quot;${video.thumbnail}&quot; alt=&quot;${video.title}&quot; onerror=&quot;this.classList.add(&apos;error&apos;); this.textContent=&apos;Thumbnail Not Available&apos;;&quot;&gt;
+          &lt;div class=&quot;project-content&quot;&gt;
+            &lt;h3 class=&quot;${isHighlighted ? &apos;highlight&apos; : &apos;&apos;}&quot;&gt;${video.title}&lt;/h3&gt;
+            &lt;div class=&quot;description&quot;&gt;
+              &lt;div class=&quot;brief&quot;&gt;${brief}&lt;/div&gt;
+              ${full ? `&lt;div class=&quot;full&quot;&gt;${full}&lt;/div&gt;` : &apos;&apos;}
+              ${full ? &apos;&lt;div class=&quot;read-more&quot; onclick=&quot;toggleDescription(this)&quot;&gt;Read More&lt;/div&gt;&apos; : &apos;&apos;}
+            &lt;/div&gt;
+            &lt;div class=&quot;button-group&quot;&gt;
+              &lt;a href=&quot;${video.url}&quot; target=&quot;_blank&quot; class=&quot;watch-btn&quot;&gt;&lt;i class=&quot;fas fa-play-circle&quot;&gt;&lt;/i&gt; Watch Tutorial&lt;/a&gt;
+              &lt;a href=&quot;${video.download}&quot; download class=&quot;download-btn&quot;&gt;&lt;i class=&quot;fas fa-download&quot;&gt;&lt;/i&gt; Download Code&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        `;
+        projectList.appendChild(projectDiv);
+      });
+
+
+      updatePagination();
+    }
+
+
+    function toggleDescription(link) {
+      const description = link.parentElement;
+      const project = description.closest(&apos;.project&apos;);
+      const isExpanded = description.classList.contains(&apos;show-full&apos;);
+
+
+      description.classList.toggle(&apos;show-full&apos;);
+      link.textContent = description.classList.contains(&apos;show-full&apos;) ? &apos;Read Less&apos; : &apos;Read More&apos;;
+
+
+      if (!isExpanded) {
+        const contentHeight = description.querySelector(&apos;.full&apos;).offsetHeight;
+        const projectContent = project.querySelector(&apos;.project-content&apos;);
+        const buttonGroupHeight = projectContent.querySelector(&apos;.button-group&apos;).offsetHeight;
+        const titleHeight = projectContent.querySelector(&apos;h3&apos;).offsetHeight;
+        const padding = 32;
+        const newHeight = 200 + titleHeight + contentHeight + buttonGroupHeight + padding;
+        project.style.height = `${newHeight}px`;
+      } else {
+        project.style.height = &apos;auto&apos;;
+      }
+    }
+
+
+    function updatePagination() {
+      const pagination = document.getElementById(&apos;pagination&apos;);
+      if (!pagination) {
+        console.error(&apos;Pagination element not found!&apos;);
+        return;
+      }
+
+
+      const totalPages = Math.ceil(currentFilteredVideos.length / videosPerPage);
+      pagination.innerHTML = &apos;&apos;;
+
+
+      if (totalPages &lt;= 1) return;
+
+
+      if (currentPage &gt; 1) {
+        const prev = document.createElement(&apos;a&apos;);
+        prev.href = &apos;#&apos;;
+        prev.innerHTML = &apos;&lt;i class=&quot;fas fa-chevron-left&quot;&gt;&lt;/i&gt; Previous&apos;;
+        prev.addEventListener(&apos;click&apos;, (e) =&gt; {
+          e.preventDefault();
+          currentPage--;
+          displayProjects(currentPage);
+          window.scrollTo({ top: document.getElementById(&apos;projects&apos;).offsetTop - 100, behavior: &apos;smooth&apos; });
+        });
+        pagination.appendChild(prev);
+      }
+
+
+      for (let i = 1; i &lt;= totalPages; i++) {
+        const pageLink = document.createElement(&apos;a&apos;);
+        pageLink.href = &apos;#&apos;;
+        pageLink.textContent = i;
+        pageLink.className = i === currentPage ? &apos;active&apos; : &apos;&apos;;
+        pageLink.addEventListener(&apos;click&apos;, (e) =&gt; {
+          e.preventDefault();
+          currentPage = i;
+          displayProjects(currentPage);
+          window.scrollTo({ top: document.getElementById(&apos;projects&apos;).offsetTop - 100, behavior: &apos;smooth&apos; });
+        });
+        pagination.appendChild(pageLink);
+      }
+
+
+      if (currentPage &lt; totalPages) {
+        const next = document.createElement(&apos;a&apos;);
+        next.href = &apos;#&apos;;
+        next.innerHTML = &apos;Next &lt;i class=&quot;fas fa-chevron-right&quot;&gt;&lt;/i&gt;&apos;;
+        next.addEventListener(&apos;click&apos;, (e) =&gt; {
+          e.preventDefault();
+          currentPage++;
+          displayProjects(currentPage);
+          window.scrollTo({ top: document.getElementById(&apos;projects&apos;).offsetTop - 100, behavior: &apos;smooth&apos; });
+        });
+        pagination.appendChild(next);
+      }
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<div style="color: red">Word to HTML trial - please <a href="https://wordtohtml.net/site/payment">Go PRO</a> to get whole HTML.</div>
