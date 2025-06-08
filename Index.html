@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.8.4.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;GSN Creation offers DIY electronics and automation projects with step-by-step tutorials for enthusiasts.&quot;&gt;
+  &lt;meta name=&quot;keywords&quot; content=&quot;DIY electronics, automation projects, tutorials, GSN Creation&quot;&gt;
+  &lt;meta name=&quot;author&quot; content=&quot;GSN Creation&quot;&gt;
+  &lt;title&gt;GSN Creation - DIY Electronics &amp; Automation&lt;/title&gt;
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css&quot;&gt;
+  &lt;style&gt;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #e6f0fa 0%, #f7f9fc 100%);
+      color: #1a2526;
+      line-height: 1.8;
+      font-size: 16px;
+      font-weight: 400;
+      min-height: 100vh;
+      padding-top: 60px;
+    }
+    nav {
+      background: linear-gradient(135deg, #ff5733, #7c4dff);
+      padding: 10px 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: transform 0.4s ease;
+      transform: translateY(0);
+    }
+    nav.hidden {
+      transform: translateY(-100%);
+    }
+    nav.minimized {
+      padding: 6px 40px;
+    }
+    .logo {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    nav.minimized .logo {
+      font-size: 1.4em;
+    }
+    .logo-icon {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    nav .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+    }
+    nav .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 0.95em;
+      font-weight: 500;
+      padding: 6px 10px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      margin: 0.2rem;
+    }
+    nav .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+      border-radius: 5px;
+      transform: scale(1.05);
+    }
+    nav .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      left: 0;
+      bottom: -4px;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    nav .nav-links a:hover::after {
+      width: 100%;
+    }
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      animation: fadeInUp 1.2s ease;
+    }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff5733, #7c4dff);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      animation: fadeIn 1.5s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    .container {
+      padding: 2rem 1rem;
+      max-width: 1280px;
+      margin: auto;
+    }
+    .search-bar {
+      margin: 2rem 0;
+      text-align: center;
+      position: relative;
+    }
+    .search-bar input {
+      padding: 0.9rem 1.2rem;
+      width: 90%;
+      max-width: 700px;
+      border: 1px solid #b0bec5;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-family: 'Inter', Arial, sans-serif;
+      transition: all 0.3s ease;
+      background: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding-right: 40px;
+    }
+    .search-bar input:focus {
+      border-color: #ff5733;
+      box-shadow: 0 0 8px rgba(255, 87, 51, 0.3);
+      outline: none;
+    }
+    .clear-search {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #555;
+      display: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .clear-search:hover {
+      color: #333;
+    }
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 700px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 100;
+      display: none;
+      margin-top: 5px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .search-suggestions.show {
+      display: block;
+    }
+    .search-suggestions ul {
+      list-style: none;
+    }
+    .search-suggestions li {
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: #1a2526;
+      transition: background 0.2s ease;
+    }
+    .search-suggestions li:hover {
+      background: #f0f2f5;
+    }
+    .section {
+      margin: 3rem 0;
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    .section.hidden {
+      display: none;
+    }
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: #1a2526;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(135deg, #ff5733, #7c4dff);
+      border-radius: 2px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .project {
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s ease;
+      display: block;
+      border: 1px solid #e0e0e0;
+      min-height: 350px;
+    }
+    .project.hidden {
+      display: none;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 4px solid #7c4dff;
+    }
+    .project img.error {
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666666;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .project-content {
+      padding: 1rem;
+    }
+    .project-content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333333;
+      transition: color 0.3s ease;
+    }
+    .project-content h3.highlight {
+      color: #ff5733;
+      text-shadow: 0 0 5px rgba(255, 87, 51, 0.3);
+    }
+    .project-content p {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
+      color: #555555;
+    }
+    .project-content .button-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 0.8rem;
+    }
+    .project-content a {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      flex: 1;
+    }
+    .project-content .watch-btn {
+      background: #ff5733;
+      color: #ffffff;
+    }
+    .project-content .watch-btn:hover {
+      background: #e64a19;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(230, 74, 25, 0.3);
+    }
+    .project-content .download-btn {
+      background: #7c4dff;
+      color: #ffffff;
+    }
+    .project-content .download-btn:hover {
+      background: #651fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(101, 31, 255, 0.3);
+    }
+    .project-content .description {
+      position: relative;
+      overflow: hidden;
+    }
+    .project-content .full {
+      display: none;
+    }
+    .project-content .read-more {
+      color: #ff5733;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    .project-content .read-more:hover {
+      color: #e64a19;
+      text-decoration: underline;
+    }
+    .project-content .show-full .brief {
+      display: none;
+    }
+    .project-content .show-full .full {
+      display: block;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 2rem 0;
+    }
+    .pagination a {
+      padding: 0.5rem 1rem;
+      background: #ff5733;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      min-width: 40px;
+      text-align: center;
+    }
+    .pagination a:hover {
+      background: #e64a19;
+      transform: translateY(-2px);
+    }
+    .pagination a.active {
+      background: #7c4dff;
+      cursor: default;
+    }
+    /* Popup Form Styles */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .popup.show {
+      display: flex;
+    }
+    .popup-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      position: relative;
+      animation: fadeIn 0.3s ease;
+    }
+    .popup-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #1a2526;
+    }
+    .popup-content .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: #555;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .popup-content .close-btn:hover {
+      color: #ff5733;
+    }
+    .popup-content form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .popup-content input,
+    .popup-content textarea {
+      padding: 0.8rem;
+      border: 1px solid #b0bec5;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: 'Inter', Arial, sans-serif;
+      transition: border-color 0.3s ease;
+    }
+    .popup-content input:focus,
+    .popup-content textarea:focus {
+      border-color: #ff5733;
+      outline: none;
+      box-shadow: 0 0 8px rgba(255, 87, 51, 0.2);
+    }
+    .popup-content textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .popup-content button {
+      background: linear-gradient(135deg, #ff5733, #7c4dff);
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .popup-content button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    footer {
+      background: linear-gradient(135deg, #1a2526, #0d1b21);
+      padding: 40px 20px;
+      color: white;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .footer-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      text-align: left;
+    }
+    .footer-column h4 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-column h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #ff5733;
+    }
+    .footer-column p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: #ddd;
+      transition: color 0.3s ease;
+      display: block;
+      padding: 5px 0;
+    }
+    .footer-links a:hover {
+      color: #ff5733;
+      padding-left: 5px;
+    }
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .social-icons a:hover {
+      background: #ff5733;
+      transform: translateY(-3px);
+    }
+    .copyright {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      body {
+        padding-top: 50px;
+      }
+      nav {
+        padding: 8px 20px;
+      }
+      nav.minimized {
+        padding: 5px 20px;
+      }
+      .logo {
+        font-size: 1.6em;
+      }
+      nav.minimized .logo {
+        font-size: 1.2em;
+      }
+      nav .nav-links a {
+        padding: 5px 8px;
+        font-size: 0.85em;
+      }
+      .hero {
+        padding: 60px 20px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .container {
+        padding: 1.5rem 0.8rem;
+      }
+      .search-bar input {
+        width: 100%;
+        font-size: 1rem;
+        padding-right: 35px;
+      }
+      .clear-search {
+        right: 10px;
+      }
+      .search-suggestions {
+        width: 100%;
+      }
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .project img {
+        height: 160px;
+      }
+      .project-content h3 {
+        font-size: 1rem;
+      }
+      .project-content p {
+        font-size: 0.8rem;
+      }
+      .project-content .button-group {
+        flex-direction: row;
+        gap: 6px;
+      }
+      .project-content a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+      .project-content .read-more {
+        font-size: 0.75rem;
+      }
+      .section {
+        padding: 1.5rem;
+      }
+      .section h2 {
+        font-size: 1.8rem;
+      }
+      .pagination a {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.9rem;
+      }
+      .footer-content {
+        text-align: center;
+      }
+      .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .social-icons {
+        justify-content: center;
+      }
+      .popup-content {
+        width: 95%;
+        padding: 1.5rem;
+      }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;nav id=&quot;navbar&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;
+      &lt;div class=&quot;logo-icon&quot;&gt;
+        &lt;i class=&quot;fas fa-microchip&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      GSNCreations
+    &lt;/div&gt;
+    &lt;div class=&quot;nav-links&quot;&gt;
+      &lt;a href=&quot;#home&quot;&gt;&lt;i class=&quot;fas fa-home&quot;&gt;&lt;/i&gt; Home&lt;/a&gt;
+      &lt;a href=&quot;#projects&quot;&gt;&lt;i class=&quot;fas fa-project-diagram&quot;&gt;&lt;/i&gt; Projects&lt;/a&gt;
+      &lt;a href=&quot;#contact&quot;&gt;&lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt; Contact&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+  &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+    &lt;h1&gt;DIY Electronics &amp; Automation Projects&lt;/h1&gt;
+    &lt;p&gt;Step-by-step tutorials for enthusiasts to build innovative electronics projects from scratch&lt;/p&gt;
+    &lt;a href=&quot;#projects&quot; class=&quot;cta-button&quot;&gt;Explore Projects &lt;i class=&quot;fas fa-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;/section&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;search-bar&quot;&gt;
+      &lt;input type=&quot;text&quot; id=&quot;searchInput&quot; placeholder=&quot;Search for DIY projects...&quot;&gt;
+      &lt;span class=&quot;clear-search&quot; id=&quot;clearSearch&quot;&gt;×&lt;/span&gt;
+      &lt;div class=&quot;search-suggestions&quot; id=&quot;searchSuggestions&quot;&gt;
+        &lt;ul id=&quot;suggestionList&quot;&gt;&lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;section&quot; id=&quot;projects&quot;&gt;
+      &lt;h2&gt;Our DIY Projects&lt;/h2&gt;
+      &lt;div class=&quot;projects&quot; id=&quot;project-list&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;pagination&quot; id=&quot;pagination&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;section&quot; id=&quot;about&quot;&gt;
+      &lt;h2&gt;About GSN Creation&lt;/h2&gt;
+      &lt;p&gt;GSN Creation is a YouTube channel dedicated to DIY electronics and automation projects. We provide step-by-step tutorials on building smart devices, home automation systems, and fun science experiments. Whether you're a beginner or an expert, our projects are designed to spark creativity and learning.&lt;/p&gt;
+      &lt;p&gt;Our mission is to make electronics accessible to everyone. We break down complex concepts into easy-to-understand instructions and provide all the resources you need to succeed. Join our growing community of makers and innovators!&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;section&quot; id=&quot;contact&quot;&gt;
+      &lt;h2&gt;Contact Us&lt;/h2&gt;
+      &lt;div style=&quot;display: grid; grid-template-columns: 1fr 1fr; gap: 30px;&quot;&gt;
+        &lt;div&gt;
+          &lt;p&gt;&lt;strong&gt;&lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt; Email:&lt;/strong&gt; contact@gsncreation.com&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;&lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt; Phone:&lt;/strong&gt; +91-98765-43210&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;&lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt; Address:&lt;/strong&gt; 123 Innovation Street, Tech City, India&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;p&gt;&lt;strong&gt;&lt;i class=&quot;fab fa-youtube&quot;&gt;&lt;/i&gt; YouTube:&lt;/strong&gt; &lt;a href=&quot;https://youtube.com/@gsncreation07&quot; target=&quot;_blank&quot; style=&quot;color: #ff5733;&quot;&gt;@gsncreation07&lt;/a&gt;&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;&lt;i class=&quot;fab fa-facebook&quot;&gt;&lt;/i&gt; Facebook:&lt;/strong&gt; &lt;a href=&quot;https://facebook.com/gsncreation&quot; target=&quot;_blank&quot; style=&quot;color: #ff5733;&quot;&gt;/gsncreation&lt;/a&gt;&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt; Instagram:&lt;/strong&gt; &lt;a href=&quot;https://instagram.com/g.s.n_creations&quot; target=&quot;_blank&quot; style=&quot;color: #ff5733;&quot;&gt;@g.s.n_creations&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div style=&quot;margin-top: 2rem; text-align: center;&quot;&gt;
+        &lt;button id=&quot;requestProjectBtn&quot; class=&quot;cta-button&quot;&gt;Request Project&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;popup&quot; id=&quot;requestPopup&quot;&gt;
+      &lt;div class=&quot;popup-content&quot;&gt;
+        &lt;span class=&quot;close-btn&quot; id=&quot;closePopup&quot;&gt;×&lt;/span&gt;
+        &lt;h3&gt;Request a Project Idea&lt;/h3&gt;
+        &lt;form id=&quot;requestForm&quot;&gt;
+          &lt;input type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Your Name&quot; required&gt;
+          &lt;input type=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Your Email&quot; required&gt;
+          &lt;input type=&quot;tel&quot; name=&quot;contact&quot; placeholder=&quot;Contact Number&quot; required pattern=&quot;[0-9]{10}&quot;&gt;
+          &lt;textarea name=&quot;projectIdea&quot; placeholder=&quot;Describe Your Project Idea&quot; required&gt;&lt;/textarea&gt;
+          &lt;button type=&quot;submit&quot;&gt;Submit Request&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;section&quot; id=&quot;privacy&quot;&gt;
+      &lt;h2&gt;Privacy Policy&lt;/h2&gt;
+      &lt;p&gt;We respect your privacy. GSN Creation does not collect, store, or share personal information from website visitors. Any data provided through contact forms is used solely for communication purposes. Third-party links have their own privacy policies.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;section&quot; id=&quot;terms&quot;&gt;
+      &lt;h2&gt;Terms of Service&lt;/h2&gt;
+      &lt;p&gt;By using our website, you agree to our terms. All content is for educational purposes only. We are not liable for any damages resulting from project implementations. Content redistribution requires written permission.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;footer&gt;
+    &lt;div class=&quot;footer-content&quot;&gt;
+      &lt;div class=&quot;footer-column&quot;&gt;
+        &lt;h4&gt;GSN Creations&lt;/h4&gt;
+        &lt;p&gt;Bringing innovative electronics projects to enthusiasts worldwide through detailed tutorials and resources.&lt;/p&gt;
+        &lt;div class=&quot;social-icons&quot;&gt;
+          &lt;a href=&quot;https://facebook.com/gsncreation&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fab fa-facebook-f&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;a href=&quot;https://instagram.com/g.s.n_creations&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;a href=&quot;https://youtube.com/@gsncreation07&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fab fa-youtube&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;a href=&quot;https://twitter.com/gsncreation&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;footer-column&quot;&gt;
+        &lt;h4&gt;Quick Links&lt;/h4&gt;
+        &lt;ul class=&quot;footer-links&quot;&gt;
+          &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;&lt;i class=&quot;fas fa-chevron-right&quot;&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#projects&quot;&gt;&lt;i class=&quot;fas fa-chevron-right&quot;&gt;&lt;/i&gt; Projects&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;&lt;i class=&quot;fas fa-chevron-right&quot;&gt;&lt;/i&gt; Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;footer-column&quot;&gt;
+        &lt;h4&gt;Support&lt;/h4&gt;
+        &lt;ul class=&quot;footer-links&quot;&gt;
+          &lt;li&gt;&lt;a href=&quot;#privacy&quot;&gt;&lt;i class=&quot;fas fa-chevron-right&quot;&gt;&lt;/i&gt; Privacy Policy&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#terms&quot;&gt;&lt;i class=&quot;fas fa-chevron-right&quot;&gt;&lt;/i&gt; Terms of Service&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;&lt;i class=&quot;fas fa-chevron-right&quot;&gt;&lt;/i&gt; Help Center&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;copyright&quot;&gt;
+      &lt;p&gt;© 2024 GSN Creation. All rights reserved | Designed with &lt;i class=&quot;fas fa-heart&quot; style=&quot;color: #ff5733;&quot;&gt;&lt;/i&gt; for Electronics Enthusiasts&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+  &lt;script&gt;
+    const videos = [
+      {
+        title: &quot;Smart Light System&quot;,
+        description: &quot;Build a phone-controlled lighting system||Learn to create an IoT-enabled smart light system using ESP8266. Includes circuit design, Blynk app integration, and safety measures. Complete code and schematics provided.&quot;,
+        thumbnail: &quot;https://img.youtube.com/vi/Tlq9UI-Qy-I/maxresdefault.jpg&quot;,
+        url: &quot;https://youtube.com/watch?v=Tlq9UI-Qy-I&quot;,
+        download: &quot;/downloads/smart-light.zip&quot;
+      },
+      {
+        title: &quot;Plant Watering System&quot;,
+        description: &quot;Automated plant care solution||Full tutorial on creating a soil moisture-based watering system using Arduino. Includes 3D-printed enclosure design and power management tips.&quot;,
+        thumbnail: &quot;https://img.youtube.com/vi/LC8w0TCat4A/maxresdefault.jpg&quot;,
+        url: &quot;https://youtube.com/watch?v=LC8w0TCat4A&quot;,
+        download: &quot;/downloads/plant-watering.zip&quot;
+      },
+      {
+        title: &quot;Home Security System&quot;,
+        description: &quot;DIY security with motion detection||Build a complete security system with PIR sensors, cameras, and alerts. Learn about sensor placement and remote monitoring.&quot;,
+        thumbnail: &quot;https://img.youtube.com/vi/BYvs1Hm6pgI/maxresdefault.jpg&quot;,
+        url: &quot;https://youtube.com/watch?v=BYvs1Hm6pgI&quot;,
+        download: &quot;/downloads/security-system.zip&quot;
+      },
+      {
+        title: &quot;Solar Tracker&quot;,
+        description: &quot;Maximize solar energy efficiency||Build a dual-axis solar tracker with LDR sensors and servo motors. Includes efficiency comparisons and maintenance tips.&quot;,
+        thumbnail: &quot;https://img.youtube.com/vi/xQApHonKvp0/maxresdefault.jpg&quot;,
+        url: &quot;https://youtube.com/watch?v=5qap5aO4i9A&quot;,
+        download: &quot;/downloads/solar-tracker.zip&quot;
+      },
+      {
+        title: &quot;Bluetooth Robot Car&quot;,
+        description: &quot;Smartphone-controlled vehicle||Step-by-step guide to building an Arduino-based robot car controlled via Bluetooth. Learn motor control and wireless communication.&quot;,
+        thumbnail: &quot;https://img.youtube.com/vi/8X5fFp7B1vQ/maxresdefault.jpg&quot;,
+        url: &quot;https://youtube.com/watch?v=8X5fFp7B1vQ&quot;,
+        download: &quot;/downloads/robot-car.zip&quot;
+      },
+      {
+        title: &quot;Weather Station&quot;,
+        description: &quot;Real-time environmental monitoring||Create a complete weather monitoring system with temperature, humidity, and pressure sensors. Data logging and visualization included.&quot;,
+        thumbnail: &quot;https://img.youtube.com/vi/3JQ7eNsS3kU/maxresdefault.jpg&quot;,
+        url: &quot;https://youtube.com/watch?v=3JQ7eNsS3kU&quot;,
+        download: &quot;/downloads/weather-station.zip&quot;
+      },
+      {
+        title: &quot;RGB Mood Lamp&quot;,
+        description: &quot;Color-changing ambient lighting||Build an ESP32-powered mood lamp with customizable colors and patterns. Includes smartphone control and scheduling features.&quot;,
+        thumbnail: &quot;https://img.youtube.com/vi/9ZfN87gSjvI/maxresdefault.jpg&quot;,
+        url: &quot;https://youtube.com/watch?v=9ZfN87gSjvI&quot;,
+        download: &quot;/downloads/mood-lamp.zip&quot;
+      }
+    ];
+
+
+    const videosPerPage = 4;
+    let currentPage = 1;
+    let lastScrollY = window.scrollY;
+    let currentFilteredVideos = videos;
+    const navbar = document.getElementById('navbar');
+    const aboutSection = document.getElementById('about');
+    const requestPopup = document.getElementById('requestPopup');
+    const requestForm = document.getElementById('requestForm');
+    const requestProjectBtn = document.getElementById('requestProjectBtn');
+    const closePopup = document.getElementById('closePopup');
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const projectList = document.getElementById('project-list');
+      if (!projectList) {
+        console.error('Project list element not found!');
+        return;
+      }
+      displayProjects(currentPage);
+      setupEventListeners();
+      setupSmoothScrolling();
+      setupNavbarBehavior();
+      setupPopupForm();
+    });
+
+
+    function setupEventListeners() {
+      const searchInput = document.getElementById('searchInput');
+      const clearSearch = document.getElementById('clearSearch');
+      const searchSuggestions = document.getElementById('searchSuggestions');
+      const suggestionList = document.getElementById('suggestionList');
+
+
+      if (!searchInput || !clearSearch || !searchSuggestions || !suggestionList) {
+        console.error('Search elements not found!');
+        return;
+      }
+
+
+      searchInput.addEventListener('input', function() {
+        clearSearch.style.display = this.value ? 'block' : 'none';
+        aboutSection.classList.toggle('hidden', this.value.length &gt; 0);
+        searchProjects();
+        updateSuggestions(this.value);
+      });
+
+
+      clearSearch.addEventListener('click', () =&gt; {
+        searchInput.value = '';
+        clearSearch.style.display = 'none';
+        aboutSection.classList.remove('hidden');
+        searchSuggestions.classList.remove('show');
+        currentPage = 1;
+        currentFilteredVideos = videos;
+        displayProjects(currentPage);
+      });
+
+
+      suggestionList.addEventListener('click', (e) =&gt; {
+        if (e.target.tagName === 'LI') {
+          searchInput.value = e.target.textContent;
+          searchSuggestions.classList.remove('show');
+          searchProjects();
+        }
+      });
+
+
+      document.addEventListener('click', (e) =&gt; {
+        if (!searchInput.contains(e.target) &amp;&amp; !searchSuggestions.contains(e.target)) {
+          searchSuggestions.classList.remove('show');
+        }
+      });
+    }
+
+
+    function setupPopupForm() {
+      if (!requestPopup || !requestForm || !requestProjectBtn || !closePopup) {
+        console.error('Popup form elements not found!');
+        return;
+      }
+
+
+      requestProjectBtn.addEventListener('click', () =&gt; {
+        requestPopup.classList.add('show');
+      });
+
+
+      closePopup.addEventListener('click', () =&gt; {
+        requestPopup.classList.remove('show');
+        requestForm.reset();
+      });
+
+
+      requestPopup.addEventListener('click', (e) =&gt; {
+        if (e.target === requestPopup) {
+          requestPopup.classList.remove('show');
+          requestForm.reset();
+        }
+      });
+
+
+      requestForm.addEventListener('submit', (e) =&gt; {
+        e.preventDefault();
+        const formData = new FormData(requestForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const contact = formData.get('contact');
+        const projectIdea = formData.get('projectIdea');
+
+
+        const subject = `Project Request from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\nContact Number: ${contact}\nProject Idea: ${projectIdea}`;
+        const mailtoLink = `mailto:contact@gsncreation.com?subject=${encodeURIComponent(subject)}&amp;body=${encodeURIComponent(body)}`;
+
+
+        window.location.href = mailtoLink;
+        requestPopup.classList.remove('show');
+        requestForm.reset();
+      });
+    }
+
+
+    function setupNavbarBehavior() {
+      let lastScrollY = window.scrollY;
+      window.addEventListener('scroll', () =&gt; {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY &gt; lastScrollY &amp;&amp; currentScrollY &gt; 100) {
+          navbar.classList.add('hidden');
+          navbar.classList.add('minimized');
+        } else if (currentScrollY &lt; lastScrollY || currentScrollY &lt;= 100) {
+          navbar.classList.remove('hidden');
+          navbar.classList.toggle('minimized', currentScrollY &gt; 100);
+        }
+        lastScrollY = currentScrollY;
+      });
+    }
+
+
+    function setupSmoothScrolling() {
+      document.querySelectorAll('a[href^=&quot;#&quot;]').forEach(anchor =&gt; {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+
+
+    function updateSuggestions(searchTerm) {
+      const suggestionList = document.getElementById('suggestionList');
+      const searchSuggestions = document.getElementById('searchSuggestions');
+      suggestionList.innerHTML = '';
+      
+      if (!searchTerm) {
+        searchSuggestions.classList.remove('show');
+        return;
+      }
+
+
+      const matchingProjects = videos.filter(video =&gt; 
+        video.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+
+      if (matchingProjects.length &gt; 0) {
+        matchingProjects.forEach(video =&gt; {
+          const li = document.createElement('li');
+          li.textContent = video.title;
+          suggestionList.appendChild(li);
+        });
+        searchSuggestions.classList.add('show');
+      } else {
+        searchSuggestions.classList.remove('show');
+      }
+    }
+
+
+    function searchProjects() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      currentFilteredVideos = videos.filter(video =&gt; 
+        video.title.toLowerCase().includes(searchTerm) || 
+        video.description.toLowerCase().includes(searchTerm)
+      );
+      currentPage = 1;
+      displayProjects(currentPage);
+    }
+
+
+    function displayProjects(page) {
+      const projectList = document.getElementById('project-list');
+      if (!projectList) {
+        console.error('Project list element not found!');
+        return;
+      }
+
+
+      const start = (page - 1) * videosPerPage;
+      const end = start + videosPerPage;
+      const paginatedVideos = currentFilteredVideos.slice(start, end);
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+
+      projectList.innerHTML = '';
+      
+      if (paginatedVideos.length === 0) {
+        projectList.innerHTML = '&lt;p class=&quot;no-projects&quot; style=&quot;text-align: center; grid-column: 1/-1; padding: 2rem; color: #546e7a;&quot;&gt;No projects found matching your search. Try different keywords.&lt;/p&gt;';
+        document.getElementById('pagination').innerHTML = '';
+        return;
+      }
+      
+      paginatedVideos.forEach(video =&gt; {
+        const [brief, full] = video.description.split('||');
+        const projectDiv = document.createElement('div');
+        projectDiv.className = 'project';
+        const isHighlighted = searchTerm &amp;&amp; video.title.toLowerCase().includes(searchTerm);
+        projectDiv.innerHTML = `
+          &lt;img src=&quot;${video.thumbnail}&quot; alt=&quot;${video.title}&quot; onerror=&quot;this.classList.add('error'); this.textContent='Thumbnail Not Available';&quot;&gt;
+          &lt;div class=&quot;project-content&quot;&gt;
+            &lt;h3 class=&quot;${isHighlighted ? 'highlight' : ''}&quot;&gt;${video.title}&lt;/h3&gt;
+            &lt;div class=&quot;description&quot;&gt;
+              &lt;div class=&quot;brief&quot;&gt;${brief}&lt;/div&gt;
+              ${full ? `&lt;div class=&quot;full&quot;&gt;${full}&lt;/div&gt;` : ''}
+              ${full ? '&lt;div class=&quot;read-more&quot; onclick=&quot;toggleDescription(this)&quot;&gt;Read More&lt;/div&gt;' : ''}
+            &lt;/div&gt;
+            &lt;div class=&quot;button-group&quot;&gt;
+              &lt;a href=&quot;${video.url}&quot; target=&quot;_blank&quot; class=&quot;watch-btn&quot;&gt;&lt;i class=&quot;fas fa-play-circle&quot;&gt;&lt;/i&gt; Watch Tutorial&lt;/a&gt;
+              &lt;a href=&quot;${video.download}&quot; download class=&quot;download-btn&quot;&gt;&lt;i class=&quot;fas fa-download&quot;&gt;&lt;/i&gt; Download Code&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        `;
+        projectList.appendChild(projectDiv);
+      });
+
+
+      updatePagination();
+    }
+
+
+    function toggleDescription(link) {
+      const description = link.parentElement;
+      const project = description.closest('.project');
+      const isExpanded = description.classList.contains('show-full');
+
+
+      description.classList.toggle('show-full');
+      link.textContent = description.classList.contains('show-full') ? 'Read Less' : 'Read More';
+
+
+      if (!isExpanded) {
+        const contentHeight = description.querySelector('.full').offsetHeight;
+        const projectContent = project.querySelector('.project-content');
+        const buttonGroupHeight = projectContent.querySelector('.button-group').offsetHeight;
+        const titleHeight = projectContent.querySelector('h3').offsetHeight;
+        const padding = 32;
+        const newHeight = 200 + titleHeight + contentHeight + buttonGroupHeight + padding;
+        project.style.height = `${newHeight}px`;
+      } else {
+        project.style.height = 'auto';
+      }
+    }
+
+
+    function updatePagination() {
+      const pagination = document.getElementById('pagination');
+      if (!pagination) {
+        console.error('Pagination element not found!');
+        return;
+      }
+
+
+      const totalPages = Math.ceil(currentFilteredVideos.length / videosPerPage);
+      pagination.innerHTML = '';
+
+
+      if (totalPages &lt;= 1) return;
+
+
+      if (currentPage &gt; 1) {
+        const prev = document.createElement('a');
+        prev.href = '#';
+        prev.innerHTML = '&lt;i class=&quot;fas fa-chevron-left&quot;&gt;&lt;/i&gt; Previous';
+        prev.addEventListener('click', (e) =&gt; {
+          e.preventDefault();
+          currentPage--;
+          displayProjects(currentPage);
+          window.scrollTo({ top: document.getElementById('projects').offsetTop - 100, behavior: 'smooth' });
+        });
+        pagination.appendChild(prev);
+      }
+
+
+      for (let i = 1; i &lt;= totalPages; i++) {
+        const pageLink = document.createElement('a');
+        pageLink.href = '#';
+        pageLink.textContent = i;
+        pageLink.className = i === currentPage ? 'active' : '';
+        pageLink.addEventListener('click', (e) =&gt; {
+          e.preventDefault();
+          currentPage = i;
+          displayProjects(currentPage);
+          window.scrollTo({ top: document.getElementById('projects').offsetTop - 100, behavior: 'smooth' });
+        });
+        pagination.appendChild(pageLink);
+      }
+
+
+      if (currentPage &lt; totalPages) {
+        const next = document.createElement('a');
+        next.href = '#';
+        next.innerHTML = 'Next &lt;i class=&quot;fas fa-chevron-right&quot;&gt;&lt;/i&gt;';
+        next.addEventListener('click', (e) =&gt; {
+          e.preventDefault();
+          currentPage++;
+          displayProjects(currentPage);
+          window.scrollTo({ top: document.getElementById('projects').offsetTop - 100, behavior: 'smooth' });
+        });
+        pagination.appendChild(next);
+      }
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
