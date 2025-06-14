@@ -734,4 +734,422 @@
     </div>
     <div class="section" id="terms">
       <h2>Terms of Service</h2>
-      <p>By using our website, you agree to our terms.
+      <p>By using our website, you agree to our terms.All content is for educational purposes only. We are not liable for any damages resulting from project implementations. Content redistribution requires written permission.</p>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>GSN Creations</h4>
+        <p>Bringing innovative electronics projects to enthusiasts worldwide through detailed tutorials and resources.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com/gsncreation" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/g.s.n_creations" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@gsncreation07" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/gsncreation" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+          <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="#privacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+          <li><a href="#terms"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+          <li><a href="#contact"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2024 GSN Creation. All rights reserved | Designed with <i class="fas fa-heart" style="color: #ff5733;"></i> for Electronics Enthusiasts</p>
+    </div>
+  </footer>
+  <script>
+    const videos = [
+       {
+        title: "Smart Touchless Dustbin Arduino & Ultrasonic Sensor",
+        description: "Hands-free Arduino-powered bin that opens automatically using ultrasonic detection.||An HC‑SR04 ultrasonic sensor, connected to an Arduino Uno, continuously measures distance.When it detects an object within 20–30 cm, Arduino activates a servo motor to lift the lid.The lid remains open for a preset time, then the servo closes it—automatic and hands‑free",
+        thumbnail: "https://img.youtube.com/vi/Tlq9UI-Qy-I/maxresdefault.jpg",
+        url: "https://youtube.com/watch?v=Tlq9UI-Qy-I",
+        download: "/downloads/smart-light.zip"
+      },
+     
+      {
+        title: "DIY Temperature Monitor with Arduino UNO, BMP180 & OLED Display",
+        description: "Real-time temperature and pressure monitoring using Arduino and BMP180 sensor.Data displayed clearly on a compact 0.96 OLED screen—perfect for any weather station||This project uses the BMP180 sensor to measure temperature and atmospheric pressure accurately.An Arduino UNO reads the data and sends it to a 0.96 I2C OLED display for real-time visualization. The values update continuously, making it ideal for basic weather stations or indoor monitoring systems.",
+        thumbnail: "https://img.youtube.com/vi/LC8w0TCat4A/maxresdefault.jpg",
+        url: "https://youtube.com/watch?v=LC8w0TCat4A",
+        download: "/downloads/plant-watering.zip"
+      },
+      {
+        title: "Lovers Day Special Arduino UNO Love Message on OLED Display",
+        description: "Celebrate Lovers Day with a sweet OLED message powered by Arduino UNO.Perfect DIY gift idea that displays custom love notes on a tiny screen||This project uses an Arduino UNO connected to a 0.96 I2C OLED display to show custom love messages.It scrolls or displays romantic lines like I love U or Happy Lovers Day with fun animations or symbols.Ideal for creating personalized tech gifts, greeting boxes, or cute table displays. Beginner friendly, it teaches OLED interfacing, I2C communication, and creative Arduino coding.",
+        thumbnail: "https://img.youtube.com/vi/BYvs1Hm6pgI/maxresdefault.jpg",
+        url: "https://youtube.com/watch?v=BYvs1Hm6pgI",
+        download: "/downloads/security-system.zip"
+      },
+      {
+        title: "Automatic Touchless Water Dispenser – Arduino UNO + Ultrasonic Sensor",
+        description: "Touch-free water dispensing using Arduino, an ultrasonic sensor, and a relay‑controlled pump.Ideal for hygiene-conscious DIYers and smart kitchen setups.||An HC‑SR04 ultrasonic sensor detects a hand or glass under the dispenser. When the distance drops below a set threshold (5–10 cm), Arduino triggers a 5 V relay.The relay powers the water pump, dispensing water automatically for a preset duration.Once the object is removed, the pump stops—clean, convenient, and efficient",
+        thumbnail: "https://img.youtube.com/vi/OqqGIXnqVSs/maxresdefault.jpg",
+        url: "https://youtube.com/shorts/OqqGIXnqVSs?si=H4aBKxJRxpOdtpdU",
+        download: "https://github.com/sgsnathan78/Gsncreation/releases/download/v1.2/Automatic.waterdispancer.docx"
+      },
+      {
+        title: "Automatic Plant Watering System – Arduino UNO + Soil Moisture Sensor 🌱",
+        description: "Hands-free irrigation using Arduino, a soil moisture sensor, and a relay-driven water pump.Keep plants healthy and watered without any manual effort.||An Arduino UNO reads real-time soil moisture via a probe connected to its analog pin.When moisture falls below a set threshold, the UNO activates a 5 V relay to power a mini water pump.The pump runs until soil moisture returns above threshold—then the relay switches off.Great beginner-friendly design that teaches analog sensing, digital output, relay control, and automation",
+        thumbnail: "https://img.youtube.com/vi/bkroLPFzYwA/maxresdefault.jpg",
+        url: "https://youtube.com/shorts/bkroLPFzYwA?si=pxuN2bzWkfVn2Xab",
+        download: "/downloads/robot-car.zip"
+      },
+      {
+        title: "Arduino DHT11 Weather Monitor – UNO with I2C Display 🌡️",
+        description: "Arduino UNO reads temperature and humidity from DHT11 sensor and shows both on an I2C LCD/OLED screen.Easy-to-build mini weather station – perfect for beginners and indoor monitoring||The DHT11 sensor measures ambient temperature and humidity and sends data to Arduino UNO via a digital pin.Arduino fetches readings and displays them on a **0.96 I2C OLED (SSD1306) or I2C LCD (16×2) screen.The display updates values every 2–5 seconds, showing “Temp: XX °C” and “Humidity: YY. A simple yet useful DIY weather monitor, teaching sensor interfacing, I2C communication,and Arduino coding.",
+        thumbnail: "https://img.youtube.com/vi/BAfyibjAcWA/maxresdefault.jpg",
+        url: "https://youtube.com/shorts/BAfyibjAcWA?si=7uS0wUkLM6nRG36M",
+        download: "/downloads/weather-station.zip"
+      },
+      {
+        title: "Water Level Monitor – Arduino UNO ,Water Level Sensor ,OLED Display",
+        description: "Touch-free water level monitoring with Arduino, water level sensor, and a 0.96 I2C OLED screen.Ideal for smart tanks, reservoirs, or plant watering reminders||The Arduino UNO reads analog water-level values from a resistive or capacitive water level sensor . Sensor output is translated into a percentage or depth value by the Arduino.Display the real-time water level on a 0.96 I2C OLED (SSD1306) for easy monitoring. beginner-friendly IoT style project combining analog sensing, I2C display, and basic calibration logic.",
+        thumbnail: "https://img.youtube.com/vi/0My4IVAsL7E/maxresdefault.jpg",
+        url: "https://youtube.com/shorts/0My4IVAsL7E?si=HV9EK5XWS-FV7VY_",
+        download: "/downloads/mood-lamp.zip"
+      },
+     {
+        title: "Arduino Smoke Alarm – MQ‑2 Sensor + Buzzer, Red LED & OLED Display 🔥",
+        description: "Instant smoke detection system using Arduino, MQ‑2 gas sensor, a buzzer with red LED alert, and a compact I2C OLED screen Perfect DIY safety gadget for indoors, showing live smoke levels and sounding alarms automatically.||The MQ‑2 sensor detects smoke (and flammable gases) and outputs an analog voltage read by Arduino A0. 1  670-0When the reading exceeds a threshold, Arduino activates a buzzer and turns on a red LED.  3 830-0Arduino continuously reads sensor values and also shows real-time levels (ppm or analog value) on a 0.96″ I2C OLED (SSD1306).  5 A beginner-friendly safety project teaching analog sensing, threshold logic, visual/audio alerts, and I2C display integration",
+        thumbnail: "https://img.youtube.com/vi/oKBzBIJ3hmQ/maxresdefault.jpg",
+        url: "https://youtube.com/shorts/oKBzBIJ3hmQ?si=dXBXY8KXb_tysAb-",
+        download: "/downloads/mood-lamp.zip"
+      },
+       {
+        title: "Automatic fan speed control based on the temperature",
+        description: "Arduino temp-based fan controller: DHT11 sensor reads ambient temp, OLED shows data, and L298N adjusts fan speed.Smart yet simple setup for automatic cooling—perfect DIY comfort booster||The DHT11 sensor measures temperature (and humidity) and sends data to Arduino UNO via a digital pin 650-0 Arduino processes the readings and displays current temperature on a 0.96″ I2C OLED (SSD1306).783-0 Using the L298N motor driver, Arduino varies PWM output to adjust fan speed based on temperature thresholds.930-0 At low temps, fan is off/low; as temp rises, the fan speeds up—ideal for automatic cooling and energy efficiency.",
+        thumbnail: "https://img.youtube.com/vi/0Cx3GRuJ4iI/maxresdefault.jpg",
+        url: "https://youtube.com/shorts/0Cx3GRuJ4iI?si=ut0z0YcuNcKNXUhG",
+        download: "/downloads/mood-lamp.zip"
+    },
+      
+      
+            {
+        title: "DIY Snake Game on LED Matrix with Joystick 🎮",
+        description: "Classic Snake game built with Arduino and joystick on an 8×8 LED matrix.Fun, interactive DIY mini-game for learning electronics and code||Arduino UNO reads joystick movements (X/Y axis and button press) to control the snake’s direction.489-0 The game runs on an 8×8 LED dot matrix (MAX7219 or similar), where the snake moves, grows when it eats the “food”, and speeds up gradually.If the snake hits the border or itself, the game ends with a blinking “Game Over” animation, and you can restart with the joystick button.840-0A great educational build that covers analog input reading (joystick), LED matrix control with LedControl, game logic, and interactive feedback loops.",
+        thumbnail: "https://img.youtube.com/vi/7-i1gZsMn-c/maxresdefault.jpg",
+        url: "https://youtube.com/shorts/7-i1gZsMn-c?si=0ks_Wsaol7Bt4oGq",
+        download: "/downloads/mood-lamp.zip"
+      },
+       
+    ];
+
+    const videosPerPage = 4;
+    let currentPage = 1;
+    let lastScrollY = window.scrollY;
+    let currentFilteredVideos = videos;
+    const navbar = document.getElementById('navbar');
+    const aboutSection = document.getElementById('about');
+    const requestPopup = document.getElementById('requestPopup');
+    const requestForm = document.getElementById('requestForm');
+    const requestProjectBtn = document.getElementById('requestProjectBtn');
+    const closePopup = document.getElementById('closePopup');
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const projectList = document.getElementById('project-list');
+      if (!projectList) {
+        console.error('Project list element not found!');
+        return;
+      }
+      displayProjects(currentPage);
+      setupEventListeners();
+      setupSmoothScrolling();
+      setupNavbarBehavior();
+      setupPopupForm();
+    });
+
+    function setupEventListeners() {
+      const searchInput = document.getElementById('searchInput');
+      const clearSearch = document.getElementById('clearSearch');
+      const searchSuggestions = document.getElementById('searchSuggestions');
+      const suggestionList = document.getElementById('suggestionList');
+
+      if (!searchInput || !clearSearch || !searchSuggestions || !suggestionList) {
+        console.error('Search elements not found!');
+        return;
+      }
+
+      searchInput.addEventListener('input', function() {
+        clearSearch.style.display = this.value ? 'block' : 'none';
+        aboutSection.classList.toggle('hidden', this.value.length > 0);
+        searchProjects();
+        updateSuggestions(this.value);
+      });
+
+      clearSearch.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearch.style.display = 'none';
+        aboutSection.classList.remove('hidden');
+        searchSuggestions.classList.remove('show');
+        currentPage = 1;
+        currentFilteredVideos = videos;
+        displayProjects(currentPage);
+      });
+
+      suggestionList.addEventListener('click', (e) => {
+        if (e.target.tagName === 'LI') {
+          searchInput.value = e.target.textContent;
+          searchSuggestions.classList.remove('show');
+          searchProjects();
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+          searchSuggestions.classList.remove('show');
+        }
+      });
+    }
+
+    function setupPopupForm() {
+      if (!requestPopup || !requestForm || !requestProjectBtn || !closePopup) {
+        console.error('Popup form elements not found!');
+        return;
+      }
+
+      requestProjectBtn.addEventListener('click', () => {
+        requestPopup.classList.add('show');
+      });
+
+      closePopup.addEventListener('click', () => {
+        requestPopup.classList.remove('show');
+        requestForm.reset();
+      });
+
+      requestPopup.addEventListener('click', (e) => {
+        if (e.target === requestPopup) {
+          requestPopup.classList.remove('show');
+          requestForm.reset();
+        }
+      });
+
+      requestForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(requestForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const contact = formData.get('contact');
+        const projectIdea = formData.get('projectIdea');
+
+        const subject = `Project Request from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\nContact Number: ${contact}\nProject Idea: ${projectIdea}`;
+        const mailtoLink = `mailto:contact@gsncreation.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoLink;
+        requestPopup.classList.remove('show');
+        requestForm.reset();
+      });
+    }
+
+    function setupNavbarBehavior() {
+      let lastScrollY = window.scrollY;
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          navbar.classList.add('hidden');
+          navbar.classList.add('minimized');
+        } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
+          navbar.classList.remove('hidden');
+          navbar.classList.toggle('minimized', currentScrollY > 100);
+        }
+        lastScrollY = currentScrollY;
+      });
+    }
+
+    function setupSmoothScrolling() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+
+    function updateSuggestions(searchTerm) {
+      const suggestionList = document.getElementById('suggestionList');
+      const searchSuggestions = document.getElementById('searchSuggestions');
+      suggestionList.innerHTML = '';
+      
+      if (!searchTerm) {
+        searchSuggestions.classList.remove('show');
+        return;
+      }
+
+      const matchingProjects = videos.filter(video => 
+        video.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      if (matchingProjects.length > 0) {
+        matchingProjects.forEach(video => {
+          const li = document.createElement('li');
+          li.textContent = video.title;
+          suggestionList.appendChild(li);
+        });
+        searchSuggestions.classList.add('show');
+      } else {
+        searchSuggestions.classList.remove('show');
+      }
+    }
+
+    function searchProjects() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      currentFilteredVideos = videos.filter(video => 
+        video.title.toLowerCase().includes(searchTerm) || 
+        video.description.toLowerCase().includes(searchTerm)
+      );
+      currentPage = 1;
+      displayProjects(currentPage);
+    }
+
+    function displayProjects(page) {
+      const projectList = document.getElementById('project-list');
+      if (!projectList) {
+        console.error('Project list element not found!');
+        return;
+      }
+
+      const start = (page - 1) * videosPerPage;
+      const end = start + videosPerPage;
+      const paginatedVideos = currentFilteredVideos.slice(start, end);
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+      projectList.innerHTML = '';
+      
+      if (paginatedVideos.length === 0) {
+        projectList.innerHTML = '<p class="no-projects" style="text-align: center; grid-column: 1/-1; padding: 2rem; color: #546e7a;">No projects found matching your search. Try different keywords.</p>';
+        document.getElementById('pagination').innerHTML = '';
+        return;
+      }
+      
+      paginatedVideos.forEach(video => {
+        const [brief, full] = video.description.split('||');
+        const projectDiv = document.createElement('div');
+        projectDiv.className = 'project';
+        const isHighlighted = searchTerm && video.title.toLowerCase().includes(searchTerm);
+        projectDiv.innerHTML = `
+          <img src="${video.thumbnail}" alt="${video.title}" onerror="this.classList.add('error'); this.textContent='Thumbnail Not Available';">
+          <div class="project-content">
+            <h3 class="${isHighlighted ? 'highlight' : ''}">${video.title}</h3>
+            <div class="description">
+              <div class="brief">${brief}</div>
+              ${full ? `<div class="full">${full}</div>` : ''}
+              ${full ? '<div class="read-more" onclick="toggleDescription(this)">Read More</div>' : ''}
+            </div>
+            <div class="button-group">
+              <a href="${video.url}" target="_blank" class="watch-btn"><i class="fas fa-play-circle"></i> Watch Tutorial</a>
+              <a href="${video.download}" download class="download-btn"><i class="fas fa-download"></i> Download Code</a>
+            </div>
+          </div>
+        `;
+        projectList.appendChild(projectDiv);
+      });
+
+      updatePagination();
+    }
+
+    function toggleDescription(link) {
+      const description = link.parentElement;
+      const project = description.closest('.project');
+      const isExpanded = description.classList.contains('show-full');
+
+      description.classList.toggle('show-full');
+      link.textContent = description.classList.contains('show-full') ? 'Read Less' : 'Read More';
+
+      if (!isExpanded) {
+        const contentHeight = description.querySelector('.full').offsetHeight;
+        const projectContent = project.querySelector('.project-content');
+        const buttonGroupHeight = projectContent.querySelector('.button-group').offsetHeight;
+        const titleHeight = projectContent.querySelector('h3').offsetHeight;
+        const padding = 32;
+        const newHeight = 200 + titleHeight + contentHeight + buttonGroupHeight + padding;
+        project.style.height = `${newHeight}px`;
+      } else {
+        project.style.height = 'auto';
+      }
+    }
+
+    function updatePagination() {
+      const pagination = document.getElementById('pagination');
+      if (!pagination) {
+        console.error('Pagination element not found!');
+        return;
+      }
+
+      const totalPages = Math.ceil(currentFilteredVideos.length / videosPerPage);
+      pagination.innerHTML = '';
+
+      if (totalPages <= 1) return;
+
+      if (currentPage > 1) {
+        const prev = document.createElement('a');
+        prev.href = '#';
+        prev.innerHTML = '<i class="fas fa-chevron-left"></i> Previous';
+        prev.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentPage--;
+          displayProjects(currentPage);
+          window.scrollTo({ top: document.getElementById('projects').offsetTop - 100, behavior: 'smooth' });
+        });
+        pagination.appendChild(prev);
+      }
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement('a');
+        pageLink.href = '#';
+        pageLink.textContent = i;
+        pageLink.className = i === currentPage ? 'active' : '';
+        pageLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentPage = i;
+          displayProjects(currentPage);
+          window.scrollTo({ top: document.getElementById('projects').offsetTop - 100, behavior: 'smooth' });
+        });
+        pagination.appendChild(pageLink);
+      }
+
+      if (currentPage < totalPages) {
+        const next = document.createElement('a');
+        next.href = '#';
+        next.innerHTML = 'Next <i class="fas fa-chevron-right"></i>';
+        next.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentPage++;
+          displayProjects(currentPage);
+          window.scrollTo({ top: document.getElementById('projects').offsetTop - 100, behavior: 'smooth' });
+        });
+        pagination.appendChild(next);
+      }
+    }
+  </script>
+</body>
+</html>
+    
+    
+    
+    
+    
+    
+    
+    
